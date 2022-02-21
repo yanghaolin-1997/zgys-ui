@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>快速开始</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/zgys-ui/assets/css/0.styles.96132d07.css" as="style"><link rel="preload" href="/zgys-ui/assets/js/app.63f78c4e.js" as="script"><link rel="preload" href="/zgys-ui/assets/js/2.d8dcb0ef.js" as="script"><link rel="preload" href="/zgys-ui/assets/js/8.751ee0d1.js" as="script"><link rel="prefetch" href="/zgys-ui/assets/js/3.abcca96f.js"><link rel="prefetch" href="/zgys-ui/assets/js/4.ed8eda71.js"><link rel="prefetch" href="/zgys-ui/assets/js/5.adc3f294.js"><link rel="prefetch" href="/zgys-ui/assets/js/6.7fd2c207.js"><link rel="prefetch" href="/zgys-ui/assets/js/7.ca1d551f.js"><link rel="prefetch" href="/zgys-ui/assets/js/9.735f764f.js">
+    <link rel="stylesheet" href="/zgys-ui/assets/css/0.styles.96132d07.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/zgys-ui/" aria-current="page" class="home-link router-link-exact-active router-link-active"><img src="/zgys-ui/image/logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/zgys-ui/" aria-current="page" class="active sidebar-link">快速开始</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/zgys-ui/componentDocs/zg-operate-btn.html" class="sidebar-link">OperateBtn 操作按钮</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="快速开始"><a href="#快速开始" class="header-anchor">#</a> 快速开始</h1> <h3 id="安装组件库"><a href="#安装组件库" class="header-anchor">#</a> 安装组件库</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> i zgys-ui
+</code></pre></div><h3 id="引用组件库"><a href="#引用组件库" class="header-anchor">#</a> 引用组件库</h3> <h4 id="全部引入"><a href="#全部引入" class="header-anchor">#</a> 全部引入</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token string">'zgys-ui/lib/css/index.css'</span>
+<span class="token keyword">import</span> ZgysUI <span class="token keyword">from</span> <span class="token string">'zgys-ui'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ZgysUI<span class="token punctuation">)</span>
+</code></pre></div><h3 id="按需引用"><a href="#按需引用" class="header-anchor">#</a> 按需引用</h3> <h4 id="_1-安装插件"><a href="#_1-安装插件" class="header-anchor">#</a> 1.安装插件</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">npm</span> i babel-plugin-import -D
+</code></pre></div><h4 id="_2-配置插件"><a href="#_2-配置插件" class="header-anchor">#</a> 2.配置插件</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// babel.config.js</span>
+<span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span>
+      <span class="token string">'import'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">libraryName</span><span class="token operator">:</span> <span class="token string">'zgys-ui'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">style</span><span class="token operator">:</span> <span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">const</span> n <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">zgys-ui/lib/css/other/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>n<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.css</span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">customName</span><span class="token operator">:</span> <span class="token parameter">name</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">zgys-ui/lib/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.umd.js</span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="_3-引入组件"><a href="#_3-引入组件" class="header-anchor">#</a> 3.引入组件</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> OperateBtn <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'zgys-ui'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>OperateBtn<span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/zgys-ui/componentDocs/zg-operate-btn.html">
+        OperateBtn 操作按钮
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/zgys-ui/assets/js/app.63f78c4e.js" defer></script><script src="/zgys-ui/assets/js/2.d8dcb0ef.js" defer></script><script src="/zgys-ui/assets/js/8.751ee0d1.js" defer></script>
+  </body>
+</html>
